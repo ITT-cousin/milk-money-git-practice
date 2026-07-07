@@ -1,4 +1,4 @@
-console.log("Hello Git");
+console.log("Hello Git!");
 
 const users = [
     {name:"Alice",
