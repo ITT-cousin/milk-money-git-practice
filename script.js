@@ -14,3 +14,4 @@ console.log("使用者第一位名稱",users[0].name);
 console.table(users);
 console.log(users[1].name);
 console.log(users[2].name);
+console.dir(users);
