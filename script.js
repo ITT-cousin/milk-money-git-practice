@@ -1,9 +1,17 @@
 console.log("Hello Git");
 
 const users = [
-    {name:"Alice"},
-    {name:"Bob"},
-    {name:"Charlie"}
+    {name:"Alice",
+     age:"25"
+    },
+
+    {name:"Bob",
+     age:"43"
+    },
+
+    {name:"Charlie",
+     age:"31"
+    },
 ];
 
 console.log("使用者",users);
