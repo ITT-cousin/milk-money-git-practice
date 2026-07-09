@@ -24,20 +24,33 @@ console.log(users[1].name);
 console.log(users[2].name);
 console.dir(users);
 
+
+const title =
+document.querySelector("#title");
+const list =
+document.querySelector("#list");
+
+
 for (let i = 0; i < users.length; i++ ){
 
     console.log(users[i].name);
     console.log(users[i].age);
+
+    
+    
+    
+    list.innerHTML += users[i].name;
+    list.innerHTML += "<br>";
+    list.innerHTML += users[i].age;
+    list.innerHTML += "<br>";
+    list.innerHTML += "歲";
+    list.innerHTML += "<br>";
+    
 };
 
-const title =
-document.querySelector("#title");
+
 
 title.textContent= "奶粉錢萬歲~";
 title.style.color = "red"; 
 title.style.fontSize = "60px";
 
-const list =
-document.querySelector("#list");
-
-list.textContent = "Alice";
