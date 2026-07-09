@@ -23,3 +23,21 @@ console.table(users);
 console.log(users[1].name);
 console.log(users[2].name);
 console.dir(users);
+
+for (let i = 0; i < users.length; i++ ){
+
+    console.log(users[i].name);
+    console.log(users[i].age);
+};
+
+const title =
+document.querySelector("#title");
+
+title.textContent= "奶粉錢萬歲~";
+title.style.color = "red"; 
+title.style.fontSize = "60px";
+
+const list =
+document.querySelector("#list");
+
+list.textContent = "Alice";
