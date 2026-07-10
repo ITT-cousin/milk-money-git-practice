@@ -39,12 +39,8 @@ for (let i = 0; i < users.length; i++ ){
     
     
     
-    list.innerHTML += users[i].name;
-    list.innerHTML += "<br>";
-    list.innerHTML += users[i].age;
-    list.innerHTML += "<br>";
-    list.innerHTML += "歲";
-    list.innerHTML += "<br>";
+    list.innerHTML += 
+    `${users[i].name} ${users[i].age} 歲<br>`
     
 };
 
