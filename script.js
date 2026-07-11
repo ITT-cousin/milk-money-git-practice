@@ -36,14 +36,19 @@ for (let i = 0; i < users.length; i++ ){
     console.log(users[i].name);
     console.log(users[i].age);
 
-    
-    
-    
     list.innerHTML += 
     `${users[i].name} ${users[i].age} 歲<br>`
     
 };
 
+const names = users.map(function(user){
+    return `${user.name} `;
+
+});
+
+list.innerHTML = names.join(" ");
+
+console.log(names);
 
 
 title.textContent= "奶粉錢萬歲~";
