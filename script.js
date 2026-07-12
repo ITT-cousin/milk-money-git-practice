@@ -29,6 +29,12 @@ const title =
 document.querySelector("#title");
 const list =
 document.querySelector("#list");
+const list1 =
+document.querySelector("#list1");
+const list2 =
+document.querySelector("#list2");
+const list3 =
+document.querySelector("#list3");
 
 
 for (let i = 0; i < users.length; i++ ){
@@ -114,7 +120,26 @@ console.log(productname);
 
 const prices = products.map(function(money){
     return `${money.price}`;
-}
-);
+});
 
 console.log(prices);
+
+// console.log(productname,prices); 我試圖使用上面productname,prices 想拚出第三題的答案 但好像做不到捏
+
+const NamePrice = products.map(function(NP){
+    return `${NP.name} - $${NP.price} <br> `
+});
+
+list1.innerHTML = NamePrice.join(" ");
+
+const NameStock = products.map(function(NS){
+    return `${NS.name} (剩餘${NS.stock}件)<br> `
+});
+
+list2.innerHTML = NameStock.join(" ");
+
+const tower = towers.map(function(namecost){
+    return `${namecost.name} - ${namecost.cost}g<br>`
+});
+
+list3.innerHTML = tower.join(" ");
