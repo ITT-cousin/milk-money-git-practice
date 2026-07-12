@@ -55,3 +55,4 @@ title.textContent= "奶粉錢萬歲~";
 title.style.color = "red"; 
 title.style.fontSize = "60px";
 
+// 明觀到此一遊
