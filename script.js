@@ -104,3 +104,17 @@ const towers = [
     }
 
 ];
+
+const productname = products.map(function(product){
+    return `${product.name}`;
+
+});
+
+console.log(productname);
+
+const prices = products.map(function(money){
+    return `${money.price}`;
+}
+);
+
+console.log(prices);
