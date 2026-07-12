@@ -41,12 +41,12 @@ for (let i = 0; i < users.length; i++ ){
     
 };
 
-const names = users.map(function(user){
-    return `${user.name} `;
+ const names = users.map(function(user){
+    return `${user.name} ${user.age} 歲<br>`;
 
 });
 
-list.innerHTML = names.join(" ");
+list.innerHTML = names.join(" "); 
 
 console.log(names);
 
@@ -55,4 +55,52 @@ title.textContent= "奶粉錢萬歲~";
 title.style.color = "red"; 
 title.style.fontSize = "60px";
 
-// 明觀到此一遊
+// 明觀到此一遊 阿記錄一下時間吧 這裡是2026年7月6號開始的吧
+
+
+const products = [
+
+    {
+        id:1,
+        name:"Mechanical Keyboard",
+        price:3490,
+        stock:12
+    },
+
+    {
+        id:2,
+        name:"Gaming Mouse",
+        price:1990,
+        stock:8
+    },
+
+    {
+        id:3,
+        name:"27 Monitor",
+        price:8990,
+        stock:3
+    }
+
+];
+
+const towers = [
+
+    {
+        name:"Chaos",
+        cost:100,
+        rarity:"Common"
+    },
+
+    {
+        name:"Lust",
+        cost:350,
+        rarity:"Rare"
+    },
+
+    {
+        name:"Gluttony",
+        cost:1200,
+        rarity:"Legendary"
+    }
+
+];
