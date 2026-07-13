@@ -36,6 +36,9 @@ document.querySelector("#list2");
 const list3 =
 document.querySelector("#list3");
 
+const productsDiv = 
+document.querySelector("#products");
+
 
 for (let i = 0; i < users.length; i++ ){
 
@@ -143,3 +146,105 @@ const tower = towers.map(function(namecost){
 });
 
 list3.innerHTML = tower.join(" ");
+
+const salePrices = products.map(function(product) {
+  return product.price * 0.9;
+});
+
+console.log("破盤價", salePrices);
+
+const orders = [
+  {
+    id: 101,
+    customer: "Eter",
+    total: 1280,
+    status: "paid"
+  },
+  {
+    id: 102,
+    customer: "Alice",
+    total: 760,
+    status: "pending"
+  },
+  {
+    id: 103,
+    customer: "Bob",
+    total: 2350,
+    status: "paid"
+  }
+];
+
+const orderTexts = orders.map(function(order) {
+  return `訂單${order.id} - ${order.customer} - $${order.total}`;
+});
+
+console.log("訂單摘要", orderTexts);
+
+
+const html = 
+products.map(function(product){
+   
+    return `⌨ ${product.name}<br> 💰$${product.price}<br> 📦庫存:${product.stock}<br>`;
+});
+
+productsDiv.innerHTML = html.join("");
+
+const expensiveProducts =
+products.filter(function(product){
+
+    return product.price >= 3000;
+
+});
+
+console.log(expensiveProducts);
+
+
+//方法鏈 可能要習慣..一下...
+/* const html =
+
+products
+    .filter(function(product){
+
+        return product.price >=3000;
+
+    })
+
+    .map(function(product){
+
+        return `
+            <div>
+
+                ${product.name}
+
+            </div>
+        `;
+
+    })
+
+    .join("");
+ */
+//這裡是展開 研究研究
+/* const expensiveProducts =
+products.filter(function(product){
+
+    return product.price >=3000;
+
+});
+
+const htmlArray =
+expensiveProducts.map(function(product){
+
+    return `
+        <div>
+
+            ${product.name}
+
+        </div>
+    `;
+
+});
+
+const html =
+htmlArray.join("");
+
+productsDiv.innerHTML = html; */
