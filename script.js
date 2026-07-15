@@ -87,7 +87,7 @@ const products = [
         id:3,
         name:"27 Monitor",
         price:8990,
-        stock:3
+        stock:0
     }
 
 ];
@@ -211,25 +211,34 @@ if(foundProduct === undefined){
     <p>庫存:${foundProduct.stock}件</p>`
 }
 
-products.map(function(product) {
+const anyProduct = products.map(function(product) {
 
     if (product.stock > 0) {
 
-        return `
-            <p>${product.name}
-            ✅ 有庫存</p>
-        `;
+        return  ` 
+          <div class = "product">
+            <h4>${product.name}</h4>
+            <p>$${product.price}</p>
+            <p>${product.stock}✅有庫存</p>
+            <p>ID:${product.id}</p>
+          </div>
+         `;
 
     } else {
 
-        return `
-            <p>${product.name}
-            ❌ 已售完</p>
+        return  `
+          <div class = "product">
+            <h4>${product.name}</h4>
+            <p>$${product.price}</p>
+            <p>${product.stock}🔴 已售完</p>
+            <p>ID:${product.id}</p>
+          </div>
         `;
 
     }
-
 });
+
+productsDiv.innerHTML = anyProduct.join("");
 
 
 
