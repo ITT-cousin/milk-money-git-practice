@@ -187,7 +187,7 @@ products.map(function(product){
     return `⌨ ${product.name}<br> 💰$${product.price}<br> 📦庫存:${product.stock}<br>`;
 });
 
-productsDiv.innerHTML = html.join("");
+// productsDiv.innerHTML = html.join("");
 
 const expensiveProducts =
 products.filter(function(product){
@@ -197,6 +197,44 @@ products.filter(function(product){
 });
 
 console.log(expensiveProducts);
+
+const foundProduct = products.find(function(product){
+    return product.id === 2;
+})
+
+if(foundProduct === undefined){
+    productsDiv.innerHTML = "找不到這個商品";
+}else{
+    productsDiv.innerHTML = 
+    `<h3>${foundProduct.name}</h3>
+    <p>價格:$${foundProduct.price}</p>
+    <p>庫存:${foundProduct.stock}件</p>`
+}
+
+products.map(function(product) {
+
+    if (product.stock > 0) {
+
+        return `
+            <p>${product.name}
+            ✅ 有庫存</p>
+        `;
+
+    } else {
+
+        return `
+            <p>${product.name}
+            ❌ 已售完</p>
+        `;
+
+    }
+
+});
+
+
+
+
+
 
 
 //方法鏈 可能要習慣..一下...
