@@ -211,6 +211,20 @@ if(foundProduct === undefined){
     <p>庫存:${foundProduct.stock}件</p>`
 }
 
+/* let stockMessage;
+
+if (stock > 0) {
+
+    stockMessage = ✅有庫存;
+
+} else {
+
+    stockMessage = 🔴 已售完;
+
+}
+
+return `<p>${stockMessage}</p>`; */
+
 const anyProduct = products.map(function(product) {
 
     if (product.stock > 0) {
@@ -239,6 +253,8 @@ const anyProduct = products.map(function(product) {
 });
 
 productsDiv.innerHTML = anyProduct.join("");
+
+
 
 
 
