@@ -211,51 +211,32 @@ if(foundProduct === undefined){
     <p>庫存:${foundProduct.stock}件</p>`
 }
 
-/* let stockMessage;
 
-if (stock > 0) {
-
-    stockMessage = ✅有庫存;
-
-} else {
-
-    stockMessage = 🔴 已售完;
-
-}
-
-return `<p>${stockMessage}</p>`; */
 
 const anyProduct = products.map(function(product) {
 
-    if (product.stock > 0) {
+    let stockMessage;
 
+    if (product.stock > 0) {
+    stockMessage = "✅有庫存";
+    } else {
+    stockMessage = "🔴已售完";
+    }
         return  ` 
           <div class = "product">
             <h4>${product.name}</h4>
             <p>$${product.price}</p>
-            <p>${product.stock}✅有庫存</p>
+            <p>${product.stock}件 ${stockMessage}</p>
             <p>ID:${product.id}</p>
           </div>
          `;
 
-    } else {
-
-        return  `
-          <div class = "product">
-            <h4>${product.name}</h4>
-            <p>$${product.price}</p>
-            <p>${product.stock}🔴 已售完</p>
-            <p>ID:${product.id}</p>
-          </div>
-        `;
-
-    }
 });
 
 productsDiv.innerHTML = anyProduct.join("");
 
 
-
+// function createProductCard(product)
 
 
 
