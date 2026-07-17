@@ -213,8 +213,9 @@ if(foundProduct === undefined){
 
 
 
-const anyProduct = products.map(function(product) {
 
+
+function createProductCard(product){
     let stockMessage;
 
     if (product.stock > 0) {
@@ -230,14 +231,11 @@ const anyProduct = products.map(function(product) {
             <p>ID:${product.id}</p>
           </div>
          `;
+}
 
-});
+const anyProduct = products.map(createProductCard);
 
 productsDiv.innerHTML = anyProduct.join("");
-
-
-// function createProductCard(product)
-
 
 
 
