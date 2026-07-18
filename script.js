@@ -215,7 +215,7 @@ if(foundProduct === undefined){
 
 
 
-function createProductCard(product){
+const createProductCard = (product) => {
     let stockMessage;
 
     if (product.stock > 0) {
@@ -223,15 +223,15 @@ function createProductCard(product){
     } else {
     stockMessage = "🔴已售完";
     }
-        return  ` 
+    return  ` 
           <div class = "product">
             <h4>${product.name}</h4>
             <p>$${product.price}</p>
             <p>${product.stock}件 ${stockMessage}</p>
             <p>ID:${product.id}</p>
           </div>
-         `;
-}
+    `;
+};
 
 const anyProduct = products.map(createProductCard);
 
