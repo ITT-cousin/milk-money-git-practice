@@ -215,9 +215,9 @@ if(foundProduct === undefined){
 
 
 
-const createProductCard = (product) => {
+const createProductCard = ({ name, price, stock, id }) => {
 
-    const { name, price, stock, id } = product;
+    // const { name, price, stock, id } = product;
 
     let stockMessage;
 
