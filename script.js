@@ -216,19 +216,22 @@ if(foundProduct === undefined){
 
 
 const createProductCard = (product) => {
+
+    const { name, price, stock, id } = product;
+
     let stockMessage;
 
-    if (product.stock > 0) {
+    if (stock > 0) {
     stockMessage = "✅有庫存";
     } else {
     stockMessage = "🔴已售完";
     }
     return  ` 
           <div class = "product">
-            <h4>${product.name}</h4>
-            <p>$${product.price}</p>
-            <p>${product.stock}件 ${stockMessage}</p>
-            <p>ID:${product.id}</p>
+            <h4>${name}</h4>
+            <p>$${price}</p>
+            <p>${stock}件 ${stockMessage}</p>
+            <p>ID:${id}</p>
           </div>
     `;
 };
