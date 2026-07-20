@@ -39,6 +39,8 @@ document.querySelector("#list3");
 const productsDiv = 
 document.querySelector("#products");
 
+const userDiv = document.querySelector("#user");
+
 
 for (let i = 0; i < users.length; i++ ){
 
@@ -217,7 +219,7 @@ if(foundProduct === undefined){
 
 const createProductCard = ({ name, price, stock, id }) => {
 
-    // const { name, price, stock, id } = product;
+    
 
     let stockMessage;
 
@@ -239,6 +241,107 @@ const createProductCard = ({ name, price, stock, id }) => {
 const anyProduct = products.map(createProductCard);
 
 productsDiv.innerHTML = anyProduct.join("");
+
+
+
+
+const user = {
+    name: "Eter",
+    age: 28,
+    city: "Tainan"
+};
+
+//第一題
+// const {name} = user;
+
+// console.log(name);
+
+//第二題
+const {name, city} =user;
+
+console.log(`${name} live in ${city}`);
+
+//第三題
+const userHTML = 
+    `<div class="user-card">
+       <h2>${name}</h2>
+       <p>${city}</p>
+     </div>`;
+  
+//因為要繼續做題所以註解掉了 你懂得明觀
+// userDiv.innerHTML = userHTML;
+
+
+//第四題
+const showUser = ({name, city}) => {
+    console.log(`${name} lives in ${city}`);
+};
+
+showUser(user);
+
+//第五題
+const getUserHTML = ({ name, city }) => {
+   return`
+    <div class="user-card">
+    <h2>名字:${name}</h2>
+    <p>城市:${city}</p>
+    </div>
+    `;
+};
+
+userDiv.innerHTML = getUserHTML(user);
+
+
+//第六題
+const getUserSentence = (user) => {
+    const {name, city} = user;
+    return`
+          ${name} comes form ${city}
+          `;
+};
+
+const sentence = getUserSentence(user);
+console.log(sentence);
+
+//第七題 窩不會...
+// const firstProduct = products[0];
+// const { name, price } = firstProduct;
+// console.log(`${name} - $${price}`);
+
+//第八題
+const showProduct = ({name, price}) => {
+    console.log(`商品: ${name} ， 價格: ${price}`);
+      
+};
+
+showProduct(products[0]);
+
+//第九題
+const getProductHTML = ({name, price, stock}) => {
+    return`
+         <div class="product-card">
+            <h2>商品名稱:${name}</h2>
+            <p>價格 $ ${price}</p>
+            <p>庫存:${stock}</p>
+         </div> `;
+};
+
+productsDiv.innerHTML = getProductHTML(products[1]);
+
+//第十題
+const productName = products.map(({name}) => {
+    return`
+     產品名稱 : ${name}`;
+
+});
+
+console.log(productName);
+
+//第十一題
+const productHTMLArray = products.map(getProductHTML);
+userDiv.innerHTML = productHTMLArray.join("");
+
+//const allProductHTML = ...;這個我不知道要寫在哪裡...
 
 
 
