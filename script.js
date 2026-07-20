@@ -296,7 +296,7 @@ userDiv.innerHTML = getUserHTML(user);
 const getUserSentence = (user) => {
     const {name, city} = user;
     return`
-          ${name} comes form ${city}
+          ${name} comes from ${city}
           `;
 };
 
@@ -330,8 +330,7 @@ productsDiv.innerHTML = getProductHTML(products[1]);
 
 //第十題
 const productName = products.map(({name}) => {
-    return`
-     產品名稱 : ${name}`;
+    return name;
 
 });
 
@@ -339,7 +338,11 @@ console.log(productName);
 
 //第十一題
 const productHTMLArray = products.map(getProductHTML);
-userDiv.innerHTML = productHTMLArray.join("");
+
+const allProductHTML = productHTMLArray.join("");
+
+productsDiv.innerHTML = allProductHTML;
+// userDiv.innerHTML = productHTMLArray.join("");
 
 //const allProductHTML = ...;這個我不知道要寫在哪裡...
 
